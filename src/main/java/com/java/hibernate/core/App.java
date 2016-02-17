@@ -62,10 +62,4 @@ public class App extends HttpServlet {
 			view.forward(req, resp);
 		}
 	}
-	// Employee emp =
-	// getEmployee(session,Integer.parseInt(req.getParameter("id")));
-
-	// resp.setContentType("text/html");
-	// PrintWriter out = resp.getWriter();
-	// out.println("Hello "+new User().getUsername());
 }

@@ -30,7 +30,6 @@ public class DBOEmployee extends HttpServlet {
 		System.out.println(req.getParameter("remove"));
 		int id = Integer.parseInt(req.getParameter("remove"));
 		deleteEmployee(session, id);
-		System.out.println("After delete");
 		session.getTransaction().commit();
 		req.setAttribute("success", "Record removed from database successfully.");
 		RequestDispatcher view = getServletContext().getRequestDispatcher("/employee.jsp");

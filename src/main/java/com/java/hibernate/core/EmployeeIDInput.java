@@ -23,8 +23,14 @@ public class EmployeeIDInput extends HttpServlet {
 		// TODO Auto-generated method stub
 		System.out.println("this is employeeid");
 		Session session = HibernateUtil.getSessionFactory().openSession();
-		Integer id = Integer.parseInt(req.getParameter("id"));
-		if (SettersGetters.getEmployee(session, id) != null) {
+		Integer id = null;
+		try{
+			id = Integer.parseInt(req.getParameter("id"));
+		} catch(NumberFormatException nm) {
+			id =null;
+		}
+		
+		if (id!=null && SettersGetters.getEmployee(session, id) != null) {
 			Employee emp = SettersGetters.getEmployeeById(session, id);
 			if (UserDAO.validateid(id, emp)) {
 				req.setAttribute("empObj", emp);

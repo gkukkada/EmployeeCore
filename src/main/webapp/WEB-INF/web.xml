@@ -1,0 +1,76 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	<welcome-file>index.jsp</welcome-file>
+	<servlet>
+		<servlet-name>App</servlet-name>
+		<display-name>App</display-name>
+		<description></description>
+		<servlet-class>com.java.hibernate.core.App</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>App</servlet-name>
+		<url-pattern>/App</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>UserApp</servlet-name>
+		<display-name>UserApp</display-name>
+		<description></description>
+		<servlet-class>com.java.hibernate.core.UserApp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UserApp</servlet-name>
+		<url-pattern>/UserApp</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>DBOEmployee</servlet-name>
+		<display-name>DBOEmployee</display-name>
+		<description></description>
+		<servlet-class>com.java.hibernate.core.DBOEmployee</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DBOEmployee</servlet-name>
+		<url-pattern>/DBOEmployee</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>EmployeeIDInput</servlet-name>
+		<display-name>EmployeeIDInput</display-name>
+		<description></description>
+		<servlet-class>com.java.hibernate.core.EmployeeIDInput</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EmployeeIDInput</servlet-name>
+		<url-pattern>/EmployeeIDInput</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>ErrorHandler</servlet-name>
+		<display-name>ErrorHandler</display-name>
+		<description></description>
+		<servlet-class>com.java.hibernate.core.util.ErrorHandler</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>ErrorHandler</servlet-name>
+		<url-pattern>/ErrorHandler</url-pattern>
+	</servlet-mapping>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+		<exception-type>java.io.IOException</exception-type>
+		<location>/ErrorHandler</location>
+	</error-page>
+	<error-page>
+		<exception-type>javax.servlet.ServletException</exception-type>
+		<location>/ErrorHandler</location>
+	</error-page>
+</web-app>

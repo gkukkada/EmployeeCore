@@ -1,6 +1,12 @@
 package com.java.hibernate.core.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="Employee")
 public class Employee implements java.io.Serializable {
 	/**
 	 * 
@@ -16,7 +22,9 @@ public class Employee implements java.io.Serializable {
 	private String lname;
 	
 	private String address;
-
+	
+	@Id
+	@Column(name="id")
 	public int getId() {
 		return id;
 	}

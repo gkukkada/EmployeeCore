@@ -1,5 +1,12 @@
 package com.java.hibernate.core.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Employee")
 public class User {
 	private String password;
 	private String firstname;
@@ -9,6 +16,8 @@ public class User {
 	/**
 	 * @return the username
 	 */
+	@Id
+	@Column(name="username")
 	public String getUsername() {
 		return username;
 	}

@@ -45,7 +45,7 @@ public class UserApp extends HttpServlet {
 			SettersGetters.saveUser(session, map);
 
 			session.getTransaction().commit();
-			resp.sendRedirect("/EmployeeCore/login.jsp");
+			resp.sendRedirect("/EmployeeCore/index.jsp");
 
 		} else {
 			req.setAttribute("err", "Given Username is Not Available. Please Choose another.");

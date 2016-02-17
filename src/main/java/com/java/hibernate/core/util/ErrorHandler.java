@@ -22,6 +22,7 @@ public class ErrorHandler extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		Throwable throwable = (Throwable) request.getAttribute("javax.servlet.ServletException");
+		throwable.printStackTrace();
 		response.sendRedirect("/EmployeeCore/error.jsp");
 	}
 

@@ -8,16 +8,17 @@
 			class="btn btn-success"><span
 			class="glyphicon glyphicon-arrow-left" aria-hidden="true"> </span>
 			Back</a>
-		<div class="alert alert-success">${success}</div>
-		
-		
-		<!-- >%
+
+		<!--FIXME: Use JSTL tags-->
+		<%
 			if (request.getAttribute("success") != null) {
-		%-->
-		
-		<%-- <%
+		%>
+		<div class="alert alert-success">
+			<%=request.getAttribute("success")%>
+		</div>
+		<%
 			}
-		%> --%>
+		%>
 		<h2>Employee Details</h2>
 		<button id="add" class="btn btn-sm btn-primary disabled">
 			<span class="glyphicon glyphicon-plus" aria-hidden="true"> </span>
@@ -37,7 +38,12 @@
 						<th>Address</th>
 					</tr>
 				</thead>
+				<%
+					if (request.getAttribute("empObj") != null) {
+						Employee ob = (Employee) request.getAttribute("empObj");
+				%>
 				<tbody>
+
 					<tr>
 						<td><button id="remove" type="submit"
 								class="btn btn-sm btn-danger" data-toggle="modal"
@@ -49,44 +55,36 @@
 								<span class="glyphicon glyphicon-pencil" aria-hidden="true">
 								</span> Edit
 							</button></td>
-						<%
-							if (request.getAttribute("empObj") != null) {
-						%>
 						<td>
 							<%
-								Employee ob = (Employee) request.getAttribute("empObj");
-									out.println(ob.getId());
+								out.println(ob.getId());
 							%>
 						</td>
 						<td>
 							<%
-								Employee ob1 = (Employee) request.getAttribute("empObj");
-									out.println(ob.getFname());
+								out.println(ob.getFname());
 							%>
 						</td>
 						<td>
 							<%
-								Employee ob2 = (Employee) request.getAttribute("empObj");
-									out.println(ob2.getLname());
+								out.println(ob.getLname());
 							%>
 						</td>
 						<td>
 							<%
-								Employee ob3 = (Employee) request.getAttribute("empObj");
-									out.println(ob3.getAge());
+								out.println(ob.getAge());
 							%>
 						</td>
 						<td>
 							<%
-								Employee ob4 = (Employee) request.getAttribute("empObj");
-									out.println(ob4.getAddress());
+								out.println(ob.getAddress());
 							%>
 						</td>
-						<%
-							}
-						%>
 					</tr>
 				</tbody>
+				<%
+					}
+				%>
 			</table>
 		</form>
 	</div>

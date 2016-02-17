@@ -9,13 +9,14 @@
 		%>
 		<div class="alert alert-warning">
 			<h4>This is somewhat embarrassing, isnt it?</h4>
-			<%= request.getAttribute("err") %>
+			<%=request.getAttribute("err")%>
 		</div>
 		<%
 			}
 		%>
-		<h3>Enter Employee ID to get Employee details. </h3>
-		<form class="form-horizontal" role="form" action="EmployeeIDInput" method="POST">
+		<h3>Enter Employee ID to get Employee details.</h3>
+		<form class="form-horizontal" role="form" action="EmployeeIDInput"
+			method="POST">
 			<div class="form-group">
 				<label class="control-label col-sm-2">Employee ID:</label>
 				<div class="col-sm-10">

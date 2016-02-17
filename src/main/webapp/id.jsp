@@ -9,7 +9,7 @@
 		%>
 		<div class="alert alert-warning">
 			<h4>This is somewhat embarrassing, isnt it?</h4>
-			<%=request.getAttribute("err")%>
+			<%= request.getAttribute("err") %>
 		</div>
 		<%
 			}

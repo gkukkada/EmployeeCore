@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.java.hibernate.core.entity.User" table="User">
+        <id name="username" type="string">
+            <column name="username" />
+            <!-- generator class="identity" /-->
+        </id>
+        <property name="password" type="string">
+            <column name="password" not-null="true"  />
+        </property>
+        <property name="email" type="string">
+            <column name="email"  not-null="true"  />
+        </property>
+        <property name="firstname" type="string">
+            <column name="firstname"  not-null="true"  />
+        </property>
+        <property name="lastname" type="string">
+            <column name="lastname"  not-null="true"  />
+        </property>
+    </class>
+</hibernate-mapping>

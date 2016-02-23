@@ -45,8 +45,6 @@ public class App extends HttpServlet {
 
 		String username = req.getParameter("username");
 		String password = req.getParameter("password");
-		
-		System.out.println("entered username: "+username);
 
 		if (SettersGetters.getUser(session, username)!= null && username!="") {
 			User usr = SettersGetters.getUser(session, username);
